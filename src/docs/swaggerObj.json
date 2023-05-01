@@ -37,8 +37,8 @@
                     "example": "Hacer un buen trabajo"
                   },
                   "status": {
-                    "type": "boolean",
-                    "example": true
+                    "type": "string",
+                    "example": "pendiente"
                   },
                   "fecha": {
                     "type": "string",
@@ -125,8 +125,8 @@
                     "example": "Hacer un 'increible trabajo' ..."
                   },
                   "status": {
-                    "type": "boolean",
-                    "example": true
+                    "type": "string",
+                    "example": "entregado"
                   },
                   "fecha": {
                     "type": "string",

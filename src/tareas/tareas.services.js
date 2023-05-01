@@ -86,7 +86,7 @@ const postNewTask = (req, res) => {
         fields: {
           titulo: "String",
           descripcion:"String",
-          status: "Boolean",
+          status: "String",
           fecha:"YYYY/MM/DD",
           comentarios:"String - (opcional)",
           responsable:"String - (opcional)",
@@ -117,7 +117,13 @@ const patchTask = (req, res) => {
           message: `The body with ID ${id} not found`,
           res,
           fields: {
-            name: "String"
+            titulo: "String",
+            descripcion:"String",
+            status: "String",
+            fecha:"YYYY/MM/DD",
+            comentarios:"String - (opcional)",
+            responsable:"String - (opcional)",
+            tags:"String - (opcional)"
           },
         });
       }
@@ -129,7 +135,13 @@ const patchTask = (req, res) => {
         message: `Error ocurred trying to update task with id ${id}`,
         res,
         fields: {
-          name: "String",
+          titulo: "String",
+          descripcion:"String",
+          status: "String",
+          fecha:"YYYY/MM/DD",
+          comentarios:"String - (opcional)",
+          responsable:"String - (opcional)",
+          tags:"String - (opcional)"
         },
       });
     });

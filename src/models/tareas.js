@@ -23,8 +23,9 @@ const Tareas = db.define("tareas", {
     allowNull: false,
   },
   status:{
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.STRING,
     allowNull: false,
+    defaultValue: 'pendiente'
   },
   fecha:{
     type: DataTypes.DATEONLY,
