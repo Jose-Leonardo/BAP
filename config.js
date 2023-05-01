@@ -1,5 +1,5 @@
 //*gestionando mis variables de entorno
-// "npm i dotenv" habilita entrar a las ariables de entorno -.env-
+// "npm i dotenv" habilita entrar a las variables de entorno -.env-
 
 require('dotenv').config()
 
@@ -18,8 +18,8 @@ const configs = {
             username: process.env.DB_USER || "postgres",
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
-            define: {
-                timestamps: true, //? Nos obliga a que todas las tablas tengan la propiedad createdAt y upadtedAt
+            define: {//? Nos obliga a que todas las tablas tengan la propiedad createdAt y upadtedAt
+                timestamps: true, 
                 underscored: true,
                 underscoredAll: true 
             }

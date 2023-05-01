@@ -6,8 +6,10 @@
  */
 
 //* Esta funcion representa en teoria el usuario que hace la peticion 
+//*Por defecto es el usuario 1
 const meddleware = (req, res, next) =>{
-    console.log("Soy el usuario fulano de tal");
+    const {user = 1 } = req.params
+    console.log(`Soy el usuario ${user}`);
     next()
 }
 

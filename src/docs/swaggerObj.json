@@ -29,25 +29,32 @@
                 "type": "object",
                 "properties": {
                   "titulo": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Trabajo de BAP"
                   },
                   "descripcion": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Hacer un buen trabajo"
                   },
                   "status": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "example": true
                   },
                   "fecha": {
-                    "type": "YYYY/MM/DD"
+                    "type": "string",
+                    "example": "2023/05/01"
                   },
                   "comentarios": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Contratado"
                   },
                   "responsable": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Jose Leonardo Aguirre Garcia"
                   },
                   "tags": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Programador Backend Guapo?"
                   }
                 }
               }
@@ -110,25 +117,32 @@
                 "type": "object",
                 "properties": {
                   "titulo": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Trabajo de BAP edicion"
                   },
                   "descripcion": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Hacer un 'increible trabajo' ..."
                   },
                   "status": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "example": true
                   },
                   "fecha": {
-                    "type": "YYYY/MM/DD"
+                    "type": "string",
+                    "example": "2023/05/01"
                   },
                   "comentarios": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Contratado y hacendido a ..... algo bueno ?"
                   },
                   "responsable": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Jose Leonardo Aguirre Garcia"
                   },
                   "tags": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Programador Backend Guapo?"
                   }
                 }
               }
