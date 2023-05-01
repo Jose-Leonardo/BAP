@@ -1,0 +1,171 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sistema de gestion de tareas",
+    "version": "1.0.0",
+    "description": "Gestiona las tareas de un tarea en particular",
+    "contact": {
+      "name": "Jose Leonardo Aguirre Garcia",
+      "email": "augl020225@gmail.com"
+    }
+  },
+  "paths": {
+    "/api/v1/tareas": {
+      "get": {
+        "summary": "Obtener todas las tareas",
+        "responses": {
+          "200": {
+            "description": "Lista de tareas"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear una nueva tarea",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "string"
+                  },
+                  "descripcion": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "YYYY/MM/DD"
+                  },
+                  "comentarios": {
+                    "type": "string"
+                  },
+                  "responsable": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "tarea creada correctamente"
+          },
+          "400": {
+            "description": "Error en los datos de la tarea"
+          }
+        }
+      }
+    },
+    "/api/v1/tareas/{id}": {
+      "get": {
+        "summary": "Obtener los datos de la tarea por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "format": "integer"
+            },
+            "required": true,
+            "description": "ID de la tarea a obtener"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Éxito. Devuelve la información del tarea."
+          },
+          "400": {
+            "description": "Hubo algun error o la tarea no existe"
+          }
+        }
+      },
+      "put": {
+        "summary": "Modificar una tarea por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "format": "integer"
+            },
+            "required": true,
+            "description": "ID de la tarea a modificar"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "string"
+                  },
+                  "descripcion": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "YYYY/MM/DD"
+                  },
+                  "comentarios": {
+                    "type": "string"
+                  },
+                  "responsable": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Éxito. Modificaste la información de la tarea."
+          },
+          "400": {
+            "description": "Hubo algun error o la tarea no existe"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Elimina un tarea por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "format": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "tarea eliminada correctamente"
+          },
+          "400": {
+            "description": "Error al eliminar la tarea o no existe"
+          }
+        }
+      }
+    }
+  }
+}

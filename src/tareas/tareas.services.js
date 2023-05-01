@@ -29,13 +29,13 @@ const getTaskyId = (req, res) => {
         responses.success({
           status: 200,
           data,
-          message: `Getting User with id: ${id}`,
+          message: `Getting task with id: ${id}`,
           res,
         });
       } else {
         responses.error({
           status: 404,
-          message: `User with ID: ${id}, not found`,
+          message: `task with ID: ${id}, not found`,
           res,
         });
       }
@@ -44,7 +44,7 @@ const getTaskyId = (req, res) => {
       responses.error({
         status: 400,
         data: err,
-        message: "Something bad getting the user",
+        message: "Something bad getting the task",
         res,
       });
     });
@@ -108,7 +108,7 @@ const patchTask = (req, res) => {
       responses.error({
         status: 400,
         data: err,
-        message: `Error ocurred trying to update user with id ${id}`,
+        message: `Error ocurred trying to update task with id ${id}`,
         res,
         fields: {
           name: "String",
@@ -126,14 +126,14 @@ const deleteTask = (req, res) => {
         responses.success({
           status: 200,
           data,
-          message: `User with id: ${id} deleted successfully`,
+          message: `task with id: ${id} deleted successfully`,
           res,
         });
       } else {
         responses.error({
           status: 404,
           data: err,
-          message: `The user with ID ${id} not found`,
+          message: `The task with ID ${id} not found`,
           res,
         });
       }
@@ -142,7 +142,7 @@ const deleteTask = (req, res) => {
       responses.error({
         status: 400,
         data: err,
-        message: `Error ocurred trying to delete user with id ${id}`,
+        message: `Error ocurred trying to delete task with id ${id}`,
         res,
       });
     });

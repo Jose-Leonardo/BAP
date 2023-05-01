@@ -1,12 +1,15 @@
 const router = require("express").Router();
 
 const services = require('./tareas.services')
+const meddleware = require('../middlewares/auth.middleware')
 
-router.get("/", services.getAllTasks);
-router.post("/", services.postNewTask);
+router.route('/')
+    .get(meddleware ,services.getAllTasks)
+    .post(meddleware, services.postNewTask)
 
-router.get("/:id", services.getTaskyId);
-router.put("/:id", services.patchTask);
-router.delete("/:id", services.deleteTask);
+router.route('/:id')
+    .get(meddleware ,services.getTaskyId)
+    .put(meddleware ,services.patchTask)
+    .delete(meddleware ,services.deleteTask);
 
 module.exports = router;

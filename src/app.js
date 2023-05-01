@@ -1,4 +1,5 @@
 const express = require('express')
+const swaggerUI = require('swagger-ui-express')
 const app = express()
 app.use(express.json())
 
@@ -7,7 +8,7 @@ const response = require('./utils/handleResponses')
 const initModels = require('./models/initModels')
 const {port, host} = require('../config').api
 const tareasRoutes = require('./tareas/tareas.router')
-
+const swaggerObj = require('./utils/swaggerObj.json')
 
 db.authenticate()
     .then(() => console.log('Database authenticated'))
@@ -20,6 +21,7 @@ db.sync()
 initModels()
 
 app.use('/api/v1/tareas', tareasRoutes)
+app.use('/api/v1/docs', swaggerUI.serve, swaggerUI.setup(swaggerObj))
 
 app.get('/', (req, res) => {
     response.success({
@@ -27,7 +29,8 @@ app.get('/', (req, res) => {
         status: 200,
         message: 'Servidor inicializado correctamente',
         data: {
-            "Tareas": `${host}/api/v1/tareas`
+            "Tareas": `${host}/api/v1/tareas`,
+            "Documentacion": `${host}/api/v1/docs`
         }
     })
 })

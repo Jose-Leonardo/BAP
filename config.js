@@ -7,8 +7,7 @@ const configs = {
     api: {
         port: process.env.PORT || 3000,
         host: process.env.HOST || 'http://localhost:3000',
-        nodeEnv: process.env.NODE_ENV || 'development',
-        secretOrKey : process.env.JWT_SECRET,
+        nodeEnv: process.env.NODE_ENV || 'development'
     },
     db: {
         development: {
